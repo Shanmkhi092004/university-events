@@ -1,0 +1,110 @@
+University Events Management System
+Demo Presentation
+Date: November 19, 2025
+
+---
+
+Project Overview
+- PHP-based event management for university websites
+- Post and display upcoming events
+- Secure, responsive, and user-friendly
+- Demonstrates core database operations (INSERT, SELECT with WHERE)
+
+---
+
+System Architecture
+- Web Browser (Client)
+- Frontend: HTML/CSS (Responsive, Modern UI)
+- Application Layer: PHP (Business Logic)
+- Database Layer: MySQL (Events Table)
+- Centralized config for DB connection
+
+---
+
+Database Schema
+- Table: events
+  - event_id (INT, PK, AUTO_INCREMENT)
+  - event_title (VARCHAR)
+  - event_date (DATETIME)
+  - location (VARCHAR)
+  - details (TEXT)
+  - created_at (TIMESTAMP)
+- Sample data included for testing
+
+---
+
+Key Features
+- Post new events (admin form)
+- Display upcoming events (public)
+- Filter by future date
+- Responsive design (mobile-friendly)
+- Secure: Prepared statements, input validation, XSS protection
+
+---
+
+Requirements
+- PHP 7.0+ (recommended: 7.4/8.0+)
+- MySQL 5.7+ (recommended: 8.0+)
+- Apache/Nginx web server
+- PHP extensions: mysqli, filter, date
+- Works on all modern browsers
+
+---
+
+Setup Guide
+1. Create database using database.sql
+2. Configure DB credentials in config/db.php
+3. Copy project to web root
+4. Start web server (php -S localhost:8000)
+5. Access via browser
+
+---
+
+Core Implementation
+- Insert Event:
+  - Admin form → PHP validation → Prepared statement → DB insert
+- Select Events:
+  - Query for future events only
+  - Display as responsive cards
+
+---
+
+Security & Error Handling
+- Client & server-side validation
+- Input sanitization (htmlspecialchars)
+- Prepared statements (SQL injection safe)
+- User-friendly error messages
+
+---
+
+Testing & Verification
+- Database and connection tests
+- Form validation and error handling
+- Events display and filtering
+- Responsive design on all devices
+
+---
+
+Future Enhancements
+- Edit/Delete events
+- Admin authentication
+- Event categories, search, and filtering
+- Email notifications, registration, calendar view
+
+---
+
+Demo
+- Show posting a new event
+- Show upcoming events page
+- Highlight responsive UI and error handling
+
+---
+
+Q&A
+- Questions and discussion
+
+---
+
+Thank You
+- Contact/support info
+- Project status: COMPLETE
