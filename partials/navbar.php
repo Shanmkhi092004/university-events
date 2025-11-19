@@ -25,10 +25,16 @@
             <?php endif; ?>    
         <a href="upcoming_events.php" class="flex items-center gap-2 text-gray-700 hover:bg-indigo-100 px-6 py-3 text-lg font-medium transition-colors duration-300<?php if(basename($_SERVER['PHP_SELF'])=='upcoming_events.php'){echo ' text-indigo-700 bg-indigo-100 font-semibold';} ?>"><svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5 text-pink-400' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/></svg>Upcoming Events</a>
             <a href="past_events.php" class="flex items-center gap-2 text-gray-700 hover:bg-indigo-100 px-6 py-3 text-lg font-medium transition-colors duration-300<?php if(basename($_SERVER['PHP_SELF'])=='past_events.php'){echo ' text-indigo-700 bg-indigo-100 font-semibold';} ?>"><svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5 text-indigo-400' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/></svg>Past Events</a>
-            <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
+            <?php if (
+                isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true &&
+                isset($_SESSION['admin_username']) && $_SESSION['admin_username'] === 'masteradmin'
+            ): ?>
                 <a href="manage_admins.php" class="flex items-center gap-2 text-gray-700 hover:bg-purple-100 px-6 py-3 text-lg font-medium transition-colors z-20 duration-300<?php if(basename($_SERVER['PHP_SELF'])=='manage_admins.php'){echo ' text-indigo-700 bg-indigo-100 font-semibold';} ?>"><svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5 text-indigo-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.655 6.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z'/></svg>Manage Admins</a>
-                <a href="logout.php" class="flex items-center gap-2 text-white bg-red-500 hover:bg-red-600 px-6 py-3 text-lg font-semibold rounded-2xl transition-colors duration-300 mt-4 md:mt-0"><svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v1'/></svg>Logout</a>
-            <?php else: ?>
+               <?php endif; ?> 
+                 <?php if (
+                isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
+                    <a href="logout.php" class="flex items-center gap-2 text-white bg-red-500 hover:bg-red-600 px-6 py-3 text-lg font-semibold rounded-2xl transition-colors duration-300 mt-4 md:mt-0"><svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v1'/></svg>Logout</a>
+                <?php else: ?>
                 <a href="login.php" class="flex items-center gap-2 text-gray-700 hover:bg-indigo-100 px-6 py-3 text-lg font-medium transition-colors duration-300<?php if(basename($_SERVER['PHP_SELF'])=='post_event.php'){echo ' text-indigo-700 bg-indigo-100 font-semibold';} ?>"><svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5 text-indigo-500' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 4v16m8-8H4'/></svg>Post New Event</a> 
             <?php endif; ?>
         </div>
