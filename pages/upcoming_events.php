@@ -51,8 +51,9 @@ date_default_timezone_set('Asia/Kolkata');
     </header> -->
 
     <header class="bg-white/20 backdrop-blur-2xl shadow-2xl rounded-b-3xl relative z-10 border-b-2 border-white/30 py-10 flex flex-col items-center">
-        <h1 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 via-fuchsia-600 to-pink-500 drop-shadow-2xl tracking-tight text-center mb-2" style="letter-spacing: 0.04em;">
-            <span class="text-white">University Events Management</span>
+        <h1 class="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 via-fuchsia-600 to-pink-500 drop-shadow-2xl tracking-tight text-center mb-2 flex items-center justify-center gap-3" style="letter-spacing: 0.04em;">
+            <img src="../images.png" alt="Logo" class="inline-block h-12 w-12 md:h-14 md:w-14 mr-2 align-middle drop-shadow-lg bg-white/80 rounded-full p-1" />
+            <span class="text-white align-middle">University Events Management</span>
         </h1>
         <p class="text-lg md:text-xl font-semibold text-white drop-shadow-sm text-center mt-2 tracking-wide">View and discover upcoming events and announcements</p>
     </header>

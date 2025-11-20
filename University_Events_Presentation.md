@@ -3,6 +3,7 @@
 ---
 
 ## 1. Project Name & Group Members
+
 - **Project:** University Events Management System
 - **Group Members:**
   - [Add Names Here]
@@ -11,11 +12,13 @@
 ---
 
 ## 2. Description
+
 A PHP-based web application for university administrators to post, manage, and display upcoming events and announcements. Features include event creation, future event filtering, responsive UI, and secure database operations.
 
 ---
 
 ## 3. Requirements
+
 - PHP 7.0 or higher
 - MySQL 5.7 or higher
 - Web server (Apache/Nginx or PHP built-in)
@@ -25,6 +28,7 @@ A PHP-based web application for university administrators to post, manage, and d
 ---
 
 ## 4. Tech Stack / Tools
+
 - PHP (Backend)
 - MySQL (Database)
 - HTML5, CSS3, Tailwind CSS (Frontend)
@@ -34,6 +38,7 @@ A PHP-based web application for university administrators to post, manage, and d
 ---
 
 ## 5. Frontend (with Pic)
+
 - Responsive design using Tailwind CSS
 - Modern glassmorphism UI
 - Event cards, admin forms, navigation
@@ -42,6 +47,7 @@ A PHP-based web application for university administrators to post, manage, and d
 ---
 
 ## 6. Backend
+
 - PHP scripts for form handling, validation, and database operations
 - Secure session management for admin
 - Prepared statements for SQL injection prevention
@@ -49,6 +55,7 @@ A PHP-based web application for university administrators to post, manage, and d
 ---
 
 ## 7. Database
+
 - MySQL database: `university_events`
 - Table: `events` (event_id, event_title, event_date, location, details, created_at)
 - See `database.sql` for schema and sample data
@@ -56,6 +63,7 @@ A PHP-based web application for university administrators to post, manage, and d
 ---
 
 ## 8. Flow of Site
+
 1. Admin logs in
 2. Admin posts new event (post_event.php)
 3. Events are stored in MySQL
@@ -65,6 +73,7 @@ A PHP-based web application for university administrators to post, manage, and d
 ---
 
 ## 9. Challenges & Solutions
+
 - **Form resubmission warning:** Solved with PRG pattern (redirect after POST)
 - **SQL injection:** Prevented using prepared statements
 - **Responsive UI:** Achieved with Tailwind CSS and custom CSS
@@ -74,8 +83,9 @@ A PHP-based web application for university administrators to post, manage, and d
 ---
 
 ## 10. Thank You
+
 Thank you for reviewing our University Events Management System!
 
 ---
 
-*For more details, see the project documentation files.*
+_For more details, see the project documentation files._
