@@ -127,12 +127,21 @@
                         $formatted_date = $event_date->format('F j, Y \a\t g:i A');
                         $event_id = $row['event_id'];
                         $bg_url = getEventBgImage($row['event_title']);
-                        echo "<div class='bg-white/95 rounded-3xl shadow-xl hover:shadow-pink-200 transition-all duration-300 border-l-8 border-indigo-400 p-7 cursor-pointer group relative overflow-hidden' role='button' tabindex='0' onclick='openModal(" . $event_id . ")' onkeydown=\"if(event.key==='Enter'||event.key===' ') openModal(" . $event_id . ")\" style=\"background-image:url('$bg_url');background-size:cover;background-position:center;\">";
+                        echo "<div class='bg-white/95 rounded-3xl shadow-xl hover:shadow-pink-200 transition-all duration-300 border-l-8 border-indigo-400 p-7 cursor-pointer group relative overflow-hidden flex flex-col justify-end' role='button' tabindex='0' onclick='openModal(" . $event_id . ")' onkeydown=\"if(event.key==='Enter'||event.key===' ') openModal(" . $event_id . ")\" style=\"background-image:url('$bg_url');background-size:cover;background-position:center;\">";
                         echo "<div class='absolute inset-0 bg-white/80 group-hover:bg-white/60 transition-all duration-300'></div>";
                         echo "<div class='relative z-10'>";
                         echo "<h3 class='text-2xl font-extrabold text-indigo-700 mb-4 flex items-center gap-2 group-hover:text-pink-500 transition-colors duration-300'><svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6 text-indigo-400' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/></svg>" . htmlspecialchars($row['event_title']) . "</h3>";
                         echo "<div class='bg-indigo-50 inline-block px-4 py-1 rounded-full text-sm text-indigo-700 font-semibold mb-4 shadow-sm'>" . $formatted_date . "</div>";
                         echo "<div class='text-purple-700 font-medium mb-2 flex items-center gap-2'><svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5 text-purple-400' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 11c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 2c-2.21 0-4 1.79-4 4 0 2.21 4 7 4 7s4-4.79 4-7c0-2.21-1.79-4-4-4z'/></svg>" . htmlspecialchars($row['location']) . "</div>";
+                        // Show Edit/Delete buttons for admins only
+                        if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true) {
+                            echo "<div class='absolute left-0 right-0 bottom-2 flex gap-2  py-3  backdrop-blur-sm border-t border-indigo-100 rounded-b-3xl opacity-0 translate-y-0 group-hover:opacity-100 group-hover:translate-y-10 transition-all duration-300 z-20 pointer-events-auto'>";
+                            echo "<a href='edit_event.php?id=" . $event_id . "' class='inline-flex items-center gap-2 px-4 py-1.5 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300'>"
+                                . "<svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M11 5h2m-1 0v14m-7-7h14'/></svg>Edit</a>";
+                            echo "<a href='delete_event.php?id=" . $event_id . "' onclick=\"return confirm('Are you sure you want to delete this event?');\" class='inline-flex items-center gap-2 px-4 py-1.5 rounded-lg font-semibold text-white bg-gradient-to-r from-rose-500 via-pink-500 to-red-600 hover:from-rose-600 hover:to-red-700 shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-rose-300'>"
+                                . "<svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12'/></svg>Delete</a>";
+                            echo "</div>";
+                        }
                         echo "</div>";
                         echo "</div>";
                     }
