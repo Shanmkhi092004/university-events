@@ -1,5 +1,5 @@
 {
-    "require": {
-        "aws/aws-sdk-php": "^3.360"
-    }
+  "name": "shanmkhi092004/university-events",
+  "description": "Short description of your project",
+  ...
 }
